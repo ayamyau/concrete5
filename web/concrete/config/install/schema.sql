@@ -22,6 +22,7 @@ cID                      INTEGER(10) UNSIGNED NOT NULL DEFAULT 0,
 arHandle                 VARCHAR(255) NOT NULL,
 arOverrideCollectionPermissions TINYINT(1) NOT NULL DEFAULT 0,
 arInheritPermissionsFromAreaOnCID INTEGER(10) UNSIGNED NOT NULL DEFAULT 0,
+arIsGlobal INTEGER(1) UNSIGNED NOT NULL DEFAULT 0,
                  PRIMARY KEY (arID)
 );
 
@@ -1279,6 +1280,12 @@ CREATE TABLE IF NOT EXISTS `FileSearchIndexAttributes` (
   `ak_width` decimal(14,4) default '0.0000',
   `ak_height` decimal(14,4) default '0.0000',
   PRIMARY KEY  (`fID`)
+) ENGINE=MyISAM;
+
+CREATE TABLE UserSearchIndexAttributes (
+uID                      INTEGER(11) UNSIGNED NOT NULL DEFAULT 0,
+                 PRIMARY KEY (uID)
+);
 ) ENGINE=MyISAM;
 
 CREATE TABLE IF NOT EXISTS `UserSearchIndexAttributes` (
